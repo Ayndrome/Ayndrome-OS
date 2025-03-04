@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Sharing App</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        button { margin: 10px 0; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        #status { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>📂 File Sharing App</h1>
+
+    <button id="start-server">Start Server</button>
+
+    <input type="text" id="file-path" placeholder="Enter file path" style="width: 300px; padding: 5px;">
+    <button id="send-file">Send File</button>
+
+    <div id="status">Status: Waiting...</div>
+
+    <script src="./renderer.js"></script>
+</body>
+</html>
