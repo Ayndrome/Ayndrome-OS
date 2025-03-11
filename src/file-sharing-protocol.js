@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 class FileSharingProtocol {
-    // Send file logic (PDF, JPEG, etc.)
+    
     static sendFile(socket, filePath) {
         const fileName = path.basename(filePath);
         const fileSize = fs.statSync(filePath).size;
