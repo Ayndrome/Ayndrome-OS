@@ -5,8 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start-server": "node src/test-server.js",
-    "test-client": "node src/test-client.js",
-    "dev": "nodemon src/server.js"
+    "test-client": "node src/test-client.js"
+   
   },
   "keywords": [],
   "author": "",
@@ -17,7 +17,6 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "multer": "^1.4.5-lts.1",
-    "net": "^1.0.2",
     "ws": "^8.18.1"
   },
   "devDependencies": {
