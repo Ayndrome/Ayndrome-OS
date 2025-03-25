@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.display-area {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Upload</h1>
+        <input type="file" id="fileInput" multiple>
+        <button id="submitButton">Submit</button>
+        <div id="displayArea" class="display-area"></div>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+    const fileInput = document.getElementById('fileInput');
+    const displayArea = document.getElementById('displayArea');
+    displayArea.innerHTML = ''; 
+
+    const files = fileInput.files;
+    if (files.length === 0) {
+        displayArea.innerHTML = '<p>No files uploaded.</p>';
+        return;
+    }
+
+    const fileList = document.createElement('ul');
+    for (let i = 0; i < files.length; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = files[i].name;
+        fileList.appendChild(listItem);
+    }
+
+    displayArea.appendChild(fileList);
+});
+    </script>
+</body>
+</html>
